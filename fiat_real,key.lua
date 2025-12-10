@@ -33,12 +33,13 @@ local InputKey = Tabs.Key:AddInput("InputKey", {
 -- BOTÃO GET KEY
 Tabs.Key:AddButton({
     Title = "Get Key",
-    Description = "Copia a key",
+    Description = "Copia o link da key",
     Callback = function()
-        setclipboard("a")
+        setclipboard("https://linkvertise.com/1460648/CKBAYEoYZmao?o=sharing")
+        
         Fluent:Notify({
-            Title = "KEY COPIADA",
-            Content = "A Key foi copiada para sua área de transferência!",
+            Title = "LINK COPIADO",
+            Content = "O link da KEY foi copiado!",
             Duration = 4
         })
     end
@@ -51,7 +52,6 @@ Tabs.Key:AddButton({
     Callback = function()
         if string.find(userKey, "130") then
             
-            -- Key válida
             setclipboard(userKey)
 
             Fluent:Notify({
@@ -60,27 +60,24 @@ Tabs.Key:AddButton({
                 Duration = 3
             })
 
+            -- FECHAR FLUENT PRIMEIRO
+            Window:Destroy()
+
             task.wait(3)
 
             local GAME_ID = 18687417158
             if game.PlaceId == GAME_ID then
-                
-                -- Executar
+                -- EXECUTAR
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/FIAT258/Not-exploits.2/main/forsaken.lua", true))()
-
             else
                 game.Players.LocalPlayer:Kick("esse script é para forsaken!")
             end
-            
-            -- FECHAR FLUENT
-            Window:Destroy()
 
         else
-            -- Key inválida
             Fluent:Notify({
                 Title = "KEY INVÁLIDA",
-                Content = "fassa direito",
+                Content = "Não contém 130",
                 Duration = 4
             })
         end
