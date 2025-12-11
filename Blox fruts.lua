@@ -65,20 +65,13 @@ Tabs.Key:AddButton({
 
             task.wait(3)
 
-            local GAME_ID = 18687417158
-            if game.PlaceId == GAME_ID then
-                -- EXECUTAR
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/FIAT258/Not-exploits.2/main/forsaken.lua", true))()
-            else
-                game.Players.LocalPlayer:Kick("esse script Ã© para forsaken!")
-            end
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/FIAT258/Not-exploits.2/main/Fiatblox.lua", true))()
 
         else
             Fluent:Notify({
-                Title = "KEY INVÃLIDA",
-                Content = "NÃ£o contÃ©m 130",
-                Duration = 4
+                Title = "KEY invalida",
+                Content = "pege link da key",
+                Duration = 5
             })
         end
     end
